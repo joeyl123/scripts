@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Download Linux
-        run: wget -q https://github.com/joeyl123/linux/archive/$(git rev-parse HEAD:linux).zip
+        run: wget -q https://github.com/joeyl123/linux/archive/$(git rev-parse HEAD:linux).zip -0 linux.zip
       - name: Unzip
-        run: unzip -q $(git rev-parse HEAD:linux).zip
+        run: unzip linux.zip
       - name: Build
         run: ./build-linux.sh linux-$(git rev-parse HEAD:linux) tinyconfig
 
